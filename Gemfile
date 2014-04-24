@@ -10,6 +10,9 @@ gem 'mysql2'
 gem 'haml'
 gem 'haml-rails'
 
+# User authentication
+gem 'devise'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -42,8 +45,8 @@ end
 # Use unicorn as the app server
 # gem 'unicorn'
 
-Use Capistrano for deployment
+#Use Capistrano for deployment
 gem 'capistrano', group: :development
 
-Use debugger
+#Use debugger
 gem 'debugger', group: [:development, :test]
