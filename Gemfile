@@ -16,6 +16,15 @@ gem 'devise'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# Compass for good measure
+gem 'compass-rails'
+
+# Generate bootstrappy scaffolds
+gem 'bootstrap-generators', '~> 3.1.1'
+
+# Bootstrap SASS version
+gem 'bootstrap-sass', '~> 3.1.1'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
