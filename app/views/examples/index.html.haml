@@ -9,6 +9,7 @@
     %thead
       %tr
         %th Name
+        %th Updated At
         %th
         %th
         %th
@@ -17,6 +18,7 @@
       - @examples.each do |example|
         %tr
           %td= example.name
+          %td= example.updated_at.strftime('%A, %b %d, %Y')
           %td= link_to 'Show', example
           %td= link_to 'Edit', edit_example_path(example)
           %td= link_to 'Destroy', example, :data => { confirm: 'Are you sure?' }, :method => :delete
