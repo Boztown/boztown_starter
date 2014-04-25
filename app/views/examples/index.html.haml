@@ -1,0 +1,22 @@
+.page-header
+  = link_to new_example_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New Example
+  %h1 Listing examples
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th Name
+        %th
+        %th
+        %th
+
+    %tbody
+      - @examples.each do |example|
+        %tr
+          %td= example.name
+          %td= link_to 'Show', example
+          %td= link_to 'Edit', edit_example_path(example)
+          %td= link_to 'Destroy', example, :data => { confirm: 'Are you sure?' }, :method => :delete

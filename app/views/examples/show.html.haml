@@ -1,0 +1,12 @@
+.page-header
+  = link_to examples_path, :class => 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_example_path(@example), :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show example
+
+%dl.dl-horizontal
+  %dt Name:
+  %dd= @example.name

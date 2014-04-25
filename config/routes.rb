@@ -1,4 +1,6 @@
 BoztownStarter::Application.routes.draw do
+  resources :examples
+
   get 'home/index'
 
   devise_for :users
