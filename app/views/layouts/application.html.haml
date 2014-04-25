@@ -1,0 +1,36 @@
+%html
+  %head
+    %title Boztown Starter
+    = stylesheet_link_tag :application, media: "all"
+    = javascript_include_tag :application
+    = csrf_meta_tags
+    %body{:class => "#{controller_name} #{action_name}"}
+      .container
+        %header#primary
+
+          /= image_tag "logo.png", id: "main-logo"
+
+          .navbar.navbar-default
+            .container-fluid
+              .navbar-header
+                %a.navbar-brand{:href => "/"} 
+                  
+              .collapse.navbar-collapse
+                %ul.nav.navbar-nav
+                  %li.nav-item
+                    Menu Item
+                  %li.nav-item
+                    Menu Item
+                  %li.nav-item
+                    Menu Item
+                  %li.nav-item
+                    Menu Item
+
+              #account-info
+                - if current_user
+                  = link_to("Logout", destroy_user_session_path, method: :delete, id: "logout-button", class: "btn btn-default" )
+                - else controller_name == 'home'
+                  = link_to("Login", new_user_session_path, id: "login-button", class: "btn btn-default" )  
+
+          = yield
+
