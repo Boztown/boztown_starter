@@ -1,10 +1,12 @@
 class ExamplesController < ApplicationController
+
   before_action :set_example, only: [:show, :edit, :update, :destroy]
+  handles_sortable_columns
 
   # GET /examples
   # GET /examples.json
   def index
-    @examples = Example.all.page params[:page]
+    @examples = Example.all.order(sortable_column_order).page params[:page]
   end
 
   # GET /examples/1

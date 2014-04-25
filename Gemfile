@@ -38,6 +38,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Chronic for wicked time formatting
 gem 'chronic'
 
+# For sorting columns (on tables and such)
+gem 'handles_sortable_columns'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

@@ -8,8 +8,8 @@
   %table.table.table-striped.table-bordered.table-hover
     %thead
       %tr
-        %th Name
-        %th Updated At
+        %th= sortable_column "Name", :column => "name"
+        %th= sortable_column "Last Update", :column => "updated_at"
         %th
         %th
         %th
