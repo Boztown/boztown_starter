@@ -15,6 +15,7 @@ BoztownStarter::Application.routes.draw do
       # Directs /admin/products/* to Admin::ProductsController
       # (app/controllers/admin/products_controller.rb)
       resources :dashboard
+      resources :users
     end
 
   # Example of regular route:

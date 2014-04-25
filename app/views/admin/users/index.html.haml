@@ -1,0 +1,27 @@
+.page-header
+  = link_to new_admin_user_path, :class => 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    New User
+  %h1 Listing users
+
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover
+    %thead
+      %tr
+        %th= sortable_column "Email", :column => "email"
+        %th= sortable_column "Last Update", :column => "updated_at"
+        %th
+        %th
+        %th
+
+    %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.email
+          %td= user.updated_at.strftime('%A, %b %d, %Y')
+          %td= link_to 'Show', admin_user_path(user)
+          %td= link_to 'Edit', edit_admin_user_path(user)
+          %td= link_to 'Destroy', admin_user_path(user), :data => { confirm: 'Are you sure?' }, :method => :delete
+
+.pagination-wrapper
+  = paginate @users
