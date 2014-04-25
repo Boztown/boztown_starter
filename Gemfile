@@ -41,6 +41,13 @@ gem 'chronic'
 # For sorting columns (on tables and such)
 gem 'handles_sortable_columns'
 
+# For uploads
+gem 'carrierwave'
+
+# Need rMagick do to thumbnail resizing through CarrierWave but it requires ImageMagick and can be a pain.  
+# I'll leave it commented out for now.
+#gem 'rmagick', '2.13.2'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
