@@ -12,6 +12,9 @@ gem 'haml-rails'
 
 # User authentication
 gem 'devise'
+ 
+# CanCanCan (continuation of CanCan) for user roles
+gem 'cancancan', '~> 1.7'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

@@ -34,6 +34,7 @@ GEM
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
+    cancancan (1.7.1)
     capistrano (3.1.0)
       i18n
       rake (>= 10.0.0)
@@ -178,6 +179,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-generators (~> 3.1.1)
   bootstrap-sass (~> 3.1.1)
+  cancancan (~> 1.7)
   capistrano
   carrierwave
   chronic
