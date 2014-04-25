@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:charset => "utf-8"}
-    %title Starter Template for Bootstrap
+    %title Boztown Starter
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}
     %meta{:content => "", :name => "description"}
     %meta{:content => "", :name => "author"}
@@ -23,15 +23,20 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          = link_to "Project name", "#", :class => "navbar-brand"
+          = link_to "Boztown Starter", "/", :class => "navbar-brand"
         .collapse.navbar-collapse
           %ul.nav.navbar-nav
             %li.active
-              %a{:href => "#"} Home
+              %a{:href => "/"} Home
             %li
-              %a{:href => "#about"} About
-            %li
-              %a{:href => "#contact"} Contact
+              = link_to "Examples", examples_path
+
+          #account-info.nav.navbar-right
+            - if current_user
+              = link_to("Logout", destroy_user_session_path, method: :delete, id: "logout-button", class: "btn btn-default navbar-btn" )
+            - else controller_name == 'home'
+              = link_to("Login", new_user_session_path, id: "login-button", class: "btn btn-default navbar-btn" )  
+
     .container
       - flash.each do |name, msg|
         = content_tag :div, :class => "alert alert-#{name == :error ? "danger" : "success" } alert-dismissable" do

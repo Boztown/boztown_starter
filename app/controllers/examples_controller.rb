@@ -4,7 +4,7 @@ class ExamplesController < ApplicationController
   # GET /examples
   # GET /examples.json
   def index
-    @examples = Example.all
+    @examples = Example.all.page params[:page]
   end
 
   # GET /examples/1
