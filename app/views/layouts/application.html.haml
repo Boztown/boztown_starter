@@ -10,7 +10,7 @@
 
           /= image_tag "logo.png", id: "main-logo"
 
-          .navbar.navbar-default
+          %nav.navbar.navbar-default
             .container-fluid
               .navbar-header
                 %a.navbar-brand{:href => "/"} 
@@ -18,19 +18,19 @@
               .collapse.navbar-collapse
                 %ul.nav.navbar-nav
                   %li.nav-item
-                    Menu Item
+                    %a{:href => ""} Menu Item
                   %li.nav-item
-                    Menu Item
+                    %a{:href => ""} Menu Item
                   %li.nav-item
-                    Menu Item
+                    %a{:href => ""} Menu Item
                   %li.nav-item
-                    Menu Item
+                    %a{:href => ""} Menu Item
 
-              #account-info
-                - if current_user
-                  = link_to("Logout", destroy_user_session_path, method: :delete, id: "logout-button", class: "btn btn-default" )
-                - else controller_name == 'home'
-                  = link_to("Login", new_user_session_path, id: "login-button", class: "btn btn-default" )  
+                #account-info.nav.navbar-right
+                  - if current_user
+                    = link_to("Logout", destroy_user_session_path, method: :delete, id: "logout-button", class: "btn btn-default navbar-btn" )
+                  - else controller_name == 'home'
+                    = link_to("Login", new_user_session_path, id: "login-button", class: "btn btn-default navbar-btn" )  
 
           = yield
 
