@@ -47,6 +47,9 @@ gem 'handles_sortable_columns'
 # For uploads
 gem 'carrierwave'
 
+# for Rake based user input
+gem 'highline'
+
 # Need rMagick do to thumbnail resizing through CarrierWave but it requires ImageMagick and can be a pain.  
 # I'll leave it commented out for now.
 #gem 'rmagick', '2.13.2'
