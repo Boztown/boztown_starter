@@ -10,6 +10,13 @@ BoztownStarter::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
+  # Example resource route within a namespace:
+    namespace :admin do
+      # Directs /admin/products/* to Admin::ProductsController
+      # (app/controllers/admin/products_controller.rb)
+      resources :dashboard
+    end
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
