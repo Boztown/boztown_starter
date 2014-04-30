@@ -34,6 +34,7 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootbox-rails (0.3.0)
     bootstrap-generators (3.1.1.2)
       railties (>= 3.1.0)
     bootstrap-sass (3.1.1.1)
@@ -117,6 +118,9 @@ GEM
     net-scp (1.2.0)
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
+    nilify_blanks (1.0.3)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
     orm_adapter (0.5.0)
     polyglot (0.3.4)
     rack (1.5.2)
@@ -187,6 +191,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
+  bootbox-rails (~> 0.3)
   bootstrap-generators (~> 3.1.1)
   bootstrap-sass (~> 3.1.1)
   cancancan (~> 1.7)
@@ -206,6 +211,7 @@ DEPENDENCIES
   kaminari
   kaminari-bootstrap (~> 3.0.1)
   mysql2
+  nilify_blanks
   rails (= 4.1.0)
   sass-rails (~> 4.0.0)
   sdoc
