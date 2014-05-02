@@ -30,6 +30,8 @@
               %a{:href => "/"} Home
             %li
               = link_to "Examples", examples_path
+            %li
+              = link_to "Users", admin_users_path
 
           #account-info.nav.navbar-right
             - if current_user
