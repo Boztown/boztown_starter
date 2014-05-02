@@ -85,11 +85,13 @@ end
 
 #Use Capistrano for deployment
 group :development do
+  gem 'spring'
   gem "better_errors"
   gem "binding_of_caller"
+  gem 'capistrano'
+  gem 'capistrano-rails', '~> 1.1'
 end
 
-gem 'capistrano', group: :development
 
 #Use debugger
 gem 'debugger', group: [:development, :test]
