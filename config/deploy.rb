@@ -18,6 +18,8 @@ set :ssh_options, {
 # Default value for :pty is false
 set :pty, true
 
+set :use_sudo, false
+
 # Default value for :linked_files is []
 #set :linked_files, %w{config/database.yml}
 
@@ -41,6 +43,7 @@ set(:symlinks, [
     link: "/etc/nginx/sites-enabled/#{fetch(:full_app_name)}"
   }
 ])
+
 
 namespace :deploy do
 
