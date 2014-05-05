@@ -30,10 +30,10 @@ set :default_env, { path: "/opt/rbenv/shims:$PATH" }
 # Default value for keep_releases is 5
 set :keep_releases, 3
 
-# set(:config_files, %w(
-#   nginx.conf
-#   database.example.yml
-# ))
+set(:config_files, %w(
+  nginx.conf
+  database.example.yml
+))
 
 set(:symlinks, [
   {
