@@ -56,9 +56,6 @@ gem 'bootbox-rails', '~>0.3'
 # I'll leave it commented out for now.
 #gem 'rmagick', '2.13.2'
 
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -77,14 +74,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
 #Use Capistrano for deployment
 group :development do
+  gem 'debugger'
   gem 'spring'
   gem "better_errors"
   gem "binding_of_caller"
@@ -94,6 +86,3 @@ group :development do
   gem 'capistrano-rails', '~> 1.1'
 end
 
-
-#Use debugger
-gem 'debugger', group: [:development, :test]
