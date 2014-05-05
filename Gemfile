@@ -89,6 +89,8 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'capistrano'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rbenv'
   gem 'capistrano-rails', '~> 1.1'
 end
 
