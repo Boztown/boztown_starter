@@ -18,6 +18,7 @@
 //= require bootbox
 //= require_tree .
 
+// this function uses the Bootstrap modals for confirmation and alerts
 $(document).ready(function() {
 	$.rails.allowAction = function(element) {
 	var message = element.data('confirm'),
