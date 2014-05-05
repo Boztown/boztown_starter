@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425171648) do
+ActiveRecord::Schema.define(version: 20140505204303) do
 
   create_table "examples", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "example_date"
+    t.decimal  "price",         precision: 8, scale: 2
+    t.integer  "examplet_id"
+    t.string   "example_photo"
+  end
+
+  create_table "examplets", force: true do |t|
+    t.string   "name"
+    t.integer  "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

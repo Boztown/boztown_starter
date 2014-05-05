@@ -1,4 +1,6 @@
 BoztownStarter::Application.routes.draw do
+  resources :examplets
+
   resources :examples
 
   get 'home/index'

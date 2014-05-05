@@ -20,4 +20,8 @@
         = f.date_field :example_date, :class => 'form-control' 
 
       .form-group
+        = f.file_field :example_photo
+        = f.hidden_field :example_photo_cache
+
+      .form-group
         = f.submit :class => 'btn btn-primary'
