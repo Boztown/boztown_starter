@@ -9,9 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  */
 
 @import "compass/reset";
+@import "bootstrap-variables";
 @import "bootstrap";
+@import "bootstrap-generators";
 @import "validations";
