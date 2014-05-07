@@ -20,6 +20,12 @@ set :pty, true
 
 set :use_sudo, false
 
+set :rbenv_type, :system
+set :rbenv_ruby, '2.0.0-p451'
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w{rake gem bundle ruby rails}
+set :rbenv_roles, :all # default value
+
 # Default value for :linked_files is []
 #set :linked_files, %w{config/database.yml}
 
@@ -55,5 +61,19 @@ namespace :deploy do
   end
 
   after :publishing, :restart
+
+  desc "Create database and database user"
+  task :create_mysql_database do
+    ask :db_root_password, ''
+    ask :db_name, fetch(:application)
+    ask :db_user, 'deployer'
+    ask :db_pass, ''
+
+    on roles(:app) do
+      execute "mysql -u root --password=#{fetch(:db_root_password)} -e \"CREATE DATABASE IF NOT EXISTS #{fetch(:db_name)}\""
+      execute "mysql -u root --password=#{fetch(:db_root_password)} -e \"GRANT ALL PRIVILEGES ON #{fetch(:db_name)}.* TO '#{fetch(:db_user)}'@'localhost' IDENTIFIED BY '#{fetch(:db_pass)}' WITH GRANT OPTION\""
+    end
+    
+  end
 
 end

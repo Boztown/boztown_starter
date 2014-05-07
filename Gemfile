@@ -80,8 +80,8 @@ group :development do
   gem 'spring'
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'capistrano'
-  gem 'capistrano-bundler'
+  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano-bundler', '~> 1.1.2'
   gem 'capistrano-rbenv'
   gem 'capistrano-rails', '~> 1.1'
 end
