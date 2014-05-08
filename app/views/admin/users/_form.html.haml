@@ -1,0 +1,32 @@
+= form_for [:admin, @user], :html => {:multipart => true} do |f|
+  - if @user.errors.any?
+    .alert.alert-danger.alert-dismissable
+      %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} &times;
+      %h4= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+
+  
+  .row
+    .col-md-4
+      .form-group
+        = f.label :email
+        = f.text_field :email, :class => "form-control"
+
+  .row
+    .col-md-4
+      .form-group
+        = f.label :password
+        %i (leave blank if you don't want to change it)
+        = f.password_field :password, :autocomplete => "off", :class => "form-control"
+
+  .row
+    .col-md-4
+      .form-group
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, :class => "form-control"
+
+
+  .actions
+    = f.submit "Save", :class => "btn-lg btn-primary"
