@@ -18,7 +18,7 @@ ready = ->
 
 
 $(document).ready(ready)
-# fire when Turbolinks is done it's AJAX stuff
+# fire when Turbolinks is done its AJAX stuff
 $(document).on('page:load', ready)
 
 
