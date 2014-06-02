@@ -93,6 +93,7 @@ GEM
     erubis (2.7.0)
     execjs (2.0.2)
     fssm (0.2.10)
+    google-analytics-rails (0.0.5)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -216,6 +217,7 @@ DEPENDENCIES
   compass-rails
   debugger
   devise
+  google-analytics-rails
   haml
   haml-rails
   handles_sortable_columns

@@ -69,6 +69,9 @@ gem 'jbuilder', '~> 1.2'
 # in instances where you'd rather use DB NULL than simply a blank string. 
 gem "nilify_blanks"
 
+# analytics.  note: there is a setting in production.rb and a tag in application layout
+gem 'google-analytics-rails'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
