@@ -1,7 +1,7 @@
 set :stage, :production
 
 set :full_app_name, "#{fetch(:application)}_#{fetch(:stage)}"
-server '107.170.151.99', user: 'deployer', roles: %w{web app}
+server '107.170.151.99', user: 'deployer', roles: %w{web app db}
 
 
 set :rails_env, "production"
