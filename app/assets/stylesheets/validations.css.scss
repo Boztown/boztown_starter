@@ -1,8 +1,0 @@
-.error { color: $brand-danger; font-size: 12px; text-align: right; }
-
-input.parsley-error { border: 1px solid $brand-danger; }
-
-.parsley-errors-list { 
-    list-style-type: none; padding: 0; margin: 0; text-align: right; 
-    li { @extend .error; width: auto; }
-}

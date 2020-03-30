@@ -1,91 +1,54 @@
 source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+
+ruby '2.6.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.0'
-
-# Use mysql as the database for Active Record
-gem 'mysql2'
-
-# HAML keeps me happy
-gem 'haml'
-gem 'haml-rails'
-
-# User authentication
-gem 'devise'
- 
-# CanCanCan (continuation of CanCan) for user roles
-gem 'cancancan', '~> 1.7'
-
+gem 'rails', '~> 6.0.1'
+# Use postgresql as the database for Active Record
+gem 'pg', '>= 0.18', '< 2.0'
+# Use Puma as the app server
+gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
-# Compass for good measure
-gem 'compass-rails'
-
-# Generate bootstrappy scaffolds
-gem 'bootstrap-generators', '~> 3.1.1'
-
-# Bootstrap SASS version
-gem 'bootstrap-sass', '~> 3.1.1'
-
-# Pagination + Bootstrap styles/mark-up for pagination.
-gem 'kaminari'
-gem 'kaminari-bootstrap', '~> 3.0.1'
-
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
-# Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-
-# Chronic for wicked time formatting
-gem 'chronic'
-
-# For sorting columns (on tables and such)
-gem 'handles_sortable_columns'
-
-# For uploads
-gem 'carrierwave'
-
-# for Rake based user input
-gem 'highline'
-
-gem 'bootbox-rails', '~>0.3'
-
-# Need rMagick do to thumbnail resizing through CarrierWave but it requires ImageMagick and can be a pain.  
-# I'll leave it commented out for now.
-gem 'rmagick', '2.13.2', :require => 'RMagick'
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-
+gem 'sass-rails', '>= 6'
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem 'webpacker', '~> 4.0'
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 2.7'
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
+# Use Active Model has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
 
-# Provides a framework for saving incoming blank values as nil in the database 
-# in instances where you'd rather use DB NULL than simply a blank string. 
-gem "nilify_blanks"
+# Use Active Storage variant
+# gem 'image_processing', '~> 1.2'
 
-# analytics.  note: there is a setting in production.rb and a tag in application layout
-gem 'google-analytics-rails'
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap', '>= 1.4.2', require: false
 
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
-#Use Capistrano for deployment
 group :development do
-  gem 'debugger'
+  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  gem 'web-console', '>= 3.3.0'
+  gem 'listen', '>= 3.0.5', '< 3.2'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem "better_errors"
-  gem "binding_of_caller"
-  gem 'capistrano', '~> 3.2.1'
-  gem 'capistrano-bundler', '~> 1.1.2'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-rails', '~> 1.1'
+  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :test do
+  # Adds support for Capybara system testing and selenium driver
+  gem 'capybara', '>= 2.15'
+  gem 'selenium-webdriver'
+  # Easy installation and use of web drivers to run system tests with browsers
+  gem 'webdrivers'
+end
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
