@@ -2,6 +2,22 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+p {
+  @apply my-2
+}
+
+a {
+  @apply underline
+}
+
+blockquote {
+  @apply border-l-4 pl-4 my-2
+}
+
+hr {
+  @apply my-2
+}
+
 h1 {
   @apply text-5xl my-3
 }
@@ -26,14 +42,15 @@ h6 {
   @apply text-lg my-2
 }
 
+
 .field {
   @apply my-4
 }
 
 input[type='submit'], button {
-  @apply w-auto text-sm rounded bg-gray-200 p-2
+  @apply w-auto border border-gray-300 rounded bg-gray-300 py-2 px-4
 }
 
-input[type='email'], input[type='password'] {
-  @apply w-auto rounded border border-gray-300 p-2
+input[type='text'], nput[type='email'], input[type='password'] {
+  @apply w-auto rounded border border-gray-300 p-2 
 }
