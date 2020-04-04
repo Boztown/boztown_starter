@@ -1,0 +1,26 @@
+<h1>Header One</h1>
+<h2>Header Two</h2>
+<h3>Header Three</h3>
+<h4>Header Four</h4>
+<h5>Header Five</h5>
+<h6>Header Six</h6>
+
+<hr>
+
+<p>Lorem Ipsum is simply <a href="#">dummy text</a> of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+<p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+
+<blockquote>
+  There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+</blockquote>
+
+<hr>
+
+<button>Simple Button</button>
+<input type="submit" value="Submit Button" />
+
+<hr>
+
+<%= form_with model: FormExample.new, path: "/ui", builder: StandardFormBuilder do |f| %>
+  <%= f.text_field(:name) %>
+<% end %>
