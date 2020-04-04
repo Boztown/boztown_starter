@@ -1,9 +1,13 @@
 class Rack::Attack
 
+  THROTTLE_LIMITS = {
+    request_per_ip_per_minute: (ENV['THROTTLE_IP_LIMIT_PER_MINUTE'] || 100).to_i
+  }
+
   cache.store = Redis.new
 
   throttle 'per_request_ip', {
-    limit: (ENV['THROTTLE_IP_LIMIT_PER_MINUTE'] || 100).to_i,
+    limit: THROTTLE_LIMITS[:request_per_ip_per_minute],
     period: 60
   } do |request|
     request.ip
