@@ -1,0 +1,56 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+p {
+  @apply my-2
+}
+
+a {
+  @apply underline
+}
+
+blockquote {
+  @apply border-l-4 pl-4 my-2
+}
+
+hr {
+  @apply my-2
+}
+
+h1 {
+  @apply text-5xl my-3
+}
+
+h2 {
+  @apply text-4xl my-3
+}
+
+h3 {
+  @apply text-3xl my-2
+}
+
+h4 {
+  @apply text-2xl my-2
+}
+
+h5 {
+  @apply text-xl my-2
+}
+
+h6 {
+  @apply text-lg my-2
+}
+
+
+.field {
+  @apply my-4
+}
+
+input[type='submit'], button {
+  @apply w-auto border border-gray-300 rounded bg-gray-300 py-2 px-4
+}
+
+input[type='text'], nput[type='email'], input[type='password'] {
+  @apply w-auto rounded border border-gray-300 p-2 
+}
