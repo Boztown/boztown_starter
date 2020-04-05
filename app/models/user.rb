@@ -6,4 +6,18 @@ class User < ApplicationRecord
 
   has_many :account_users
   has_many :accounts, through: :account_users
+
+  before_create :create_default_account
+
+  def name
+    "#{first_name} #{last_name}"
+  end
+
+
+  private
+
+  def create_default_account
+    default_account = Account.create(name: "#{name}'s Account")
+    self.accounts << default_account if self.accounts.blank?
+  end
 end
