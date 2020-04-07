@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -16,11 +18,11 @@ gem 'rails', '~> 6.0.1'
 gem 'redis', '~> 4.0'
 gem 'sass-rails', '>= 6'
 gem 'turbolinks', '~> 5'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'webpacker', '~> 4.0'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails', '~> 5.1'
   gem 'rspec-rails', '~> 4.0.0'
 end
@@ -34,10 +36,9 @@ group :development do
 end
 
 group :test do
-  gem 'fakeredis', :require => 'fakeredis/rspec'
   gem 'capybara', '>= 2.15'
+  gem 'fakeredis', require: 'fakeredis/rspec'
   gem 'rspec'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
-
