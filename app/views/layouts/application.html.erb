@@ -37,6 +37,11 @@
       </ul>
     </nav>
     <main class="container mx-auto border border-gray-300 p-5">
+      <% flash.each do |type, msg| %>
+        <div>
+          <%= msg %>
+        </div>
+      <% end %>
       <%= yield %>
     </main>
   </body>
