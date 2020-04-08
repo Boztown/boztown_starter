@@ -5,17 +5,17 @@
 // like app/views/layouts/application.html.erb.
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
-import Vue from 'vue'
-import App from '../app.vue'
+// import Vue from 'vue'
+// import App from '../app.vue'
 
-document.addEventListener('DOMContentLoaded', () => {
-  const app = new Vue({
-    render: h => h(App)
-  }).$mount()
-  document.body.appendChild(app.$el)
+// document.addEventListener('DOMContentLoaded', () => {
+//   const app = new Vue({
+//     render: h => h(App)
+//   }).$mount()
+//   document.body.appendChild(app.$el)
 
-  console.log(app)
-})
+//   console.log(app)
+// })
 
 
 // The above code uses Vue without the compiler, which means you cannot
@@ -32,17 +32,33 @@ document.addEventListener('DOMContentLoaded', () => {
 // </div>
 
 
-// import Vue from 'vue/dist/vue.esm'
-// import App from '../app.vue'
-//
+import Vue from 'vue/dist/vue.esm'
+window.Vue = Vue;
+
+/**
+ * Global Components object for namespacing Vue components
+ */
+window.Components = {};
+
+/**
+ * Import all Vue objects in order to attach to window.Components
+ */
+  var req = require.context('../components', true, /\.vue$/);
+req.keys().forEach((key) => {
+  const comp = req(key).default;
+  if (comp.name) {
+    window.Components[comp.name] = comp;
+  }
+});
+  
 // document.addEventListener('DOMContentLoaded', () => {
-//   const app = new Vue({
-//     el: '#hello',
-//     data: {
-//       message: "Can you say hello?"
-//     },
-//     components: { App }
-//   })
+//  const app = new Vue({
+//    el: '#hello',
+//    data: {
+//      message: "Can you say hello?"
+//    },
+//    components: { App }
+//  })
 // })
 //
 //

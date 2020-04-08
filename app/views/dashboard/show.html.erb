@@ -1,1 +1,20 @@
-Dashboard
+<%= javascript_pack_tag 'hello_vue' %>
+
+<div id='hello'>
+ {{message}}
+ <app></app>
+</div>
+
+ <script>
+  document.addEventListener('DOMContentLoaded', () => {
+   const app = new Vue({
+     el: '#hello',
+     data: {
+       message: "Can you say hello?"
+     },
+     components: { 
+       App: window.Components.App 
+     }
+   })
+  })
+ </script>
