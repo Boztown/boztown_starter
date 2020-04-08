@@ -11,7 +11,7 @@
   </head>
 
   <body>
-    <%= cell(PrimaryNavCell) %>
+    <%= cell(PrimaryNavCell, current_user: current_user) %>
     <main class="container mx-auto border border-gray-300 p-5">
       <%= yield %>
     </main>
