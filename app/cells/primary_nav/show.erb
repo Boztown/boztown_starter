@@ -1,0 +1,25 @@
+<nav class="container mx-auto">
+  <ul class="flex items-center justify-between flex-wrap">
+    <li>
+      <ul class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+        <li class="pr-5">
+          <%= link_to('Dashboard', dashboard_path) %>  
+        </li>
+        <li class="pr-5">
+          <%= link_to('Dashboard', dashboard_path) %>  
+        </li>
+      </ul>
+    </li>
+    <li>
+      <ul>
+        <li>
+          <% if @options[:current_user].present? %>
+            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+          <% else %>
+            <%= link_to('Login', new_user_session_path) %>  
+          <% end %>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
