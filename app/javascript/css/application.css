@@ -51,6 +51,6 @@ input[type='submit'], button {
   @apply w-auto border border-gray-300 rounded bg-gray-300 py-2 px-4
 }
 
-input[type='text'], nput[type='email'], input[type='password'] {
+input[type='text'], input[type='email'], input[type='password'] {
   @apply w-auto rounded border border-gray-300 p-2 
 }
