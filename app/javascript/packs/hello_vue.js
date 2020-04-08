@@ -33,23 +33,20 @@
 
 
 import Vue from 'vue/dist/vue.esm'
-window.Vue = Vue;
 
 /**
- * Global Components object for namespacing Vue components
+ * Globally register all Vue components
  */
-window.Components = {};
-
-/**
- * Import all Vue objects in order to attach to window.Components
- */
-  var req = require.context('../components', true, /\.vue$/);
+var req = require.context('../components', true, /\.vue$/);
 req.keys().forEach((key) => {
   const comp = req(key).default;
   if (comp.name) {
-    window.Components[comp.name] = comp;
+    // Globally register component
+    Vue.component(comp.name, comp);
   }
 });
+
+window.Vue = Vue;
   
 // document.addEventListener('DOMContentLoaded', () => {
 //  const app = new Vue({
