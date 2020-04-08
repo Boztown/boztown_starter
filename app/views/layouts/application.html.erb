@@ -11,17 +11,29 @@
   </head>
 
   <body>
-    <nav>
-      <ul>
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
-          </li>
-        <% else %>
-          <li>
-            <%= link_to('Login', new_user_session_path) %>  
-          </li>
-        <% end %>
+    <nav class="container mx-auto">
+      <ul class="flex items-center justify-between flex-wrap">
+        <li>
+          <ul class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <li class="pr-5">
+              <%= link_to('Dashboard', dashboard_path) %>  
+            </li>
+            <li class="pr-5">
+              <%= link_to('Dashboard', dashboard_path) %>  
+            </li>
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li>
+              <% if user_signed_in? %>
+                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+              <% else %>
+                <%= link_to('Login', new_user_session_path) %>  
+              <% end %>
+            </li>
+          </ul>
+        </li>
       </ul>
     </nav>
     <main class="container mx-auto border border-gray-300 p-5">
