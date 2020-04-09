@@ -1,17 +1,26 @@
-<%= javascript_pack_tag 'hello_vue' %>
 
+<div>
 <div id='hello'>
  {{message}}
  <app></app>
+ <a href="#" @click="onClick">Click</a>
+ <%= link_to "UI", ui_index_path %>
+</div>
 </div>
 
- <script>
-  document.addEventListener('DOMContentLoaded', () => {
+<script>
+  document.addEventListener('turbolinks:load', () => {
    const app = new Vue({
      el: '#hello',
      data: {
        message: "Can you say hello?"
+     },
+     methods: {
+       onClick(e) {
+         e.preventDefault();
+         this.message = "Spanky!";
+       }
      }
    })
   })
- </script>
+</script>
