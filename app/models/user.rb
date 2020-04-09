@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :account_users
   has_many :accounts, through: :account_users
 
+  validates :first_name, presence: true, length: { maximum: 255 }
+  validates :last_name, presence: true, length: { maximum: 255 }
+
+
   before_create :create_default_account
 
   def name
