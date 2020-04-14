@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 describe Account, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'when validating' do
+    subject { build(:account) }
+
+    it { should have_many(:users).through(:account_users) }
+  end
 end
