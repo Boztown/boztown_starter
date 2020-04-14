@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true, length: { maximum: 255 }
   validates :last_name, presence: true, length: { maximum: 255 }
+  validates :password, length: { in: 8..128 }, allow_blank: true
+  validates :email, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }, presence: true
 
   before_create :create_default_account
 
