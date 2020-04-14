@@ -24,7 +24,7 @@ class User < ApplicationRecord
   private
 
   def create_default_account
-    default_account = Account.create(name: "#{name}'s Account")
+    default_account = Account.create!(name: "#{name}'s Account")
     self.accounts << default_account if self.accounts.blank?
   end
 end
