@@ -1,5 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe AccountUser, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe AccountUser, type: :model do
+  it { should belong_to(:account) }
+  it { should belong_to(:user) }
 end
