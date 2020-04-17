@@ -1,0 +1,10 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+
+Style/StringLiterals:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false

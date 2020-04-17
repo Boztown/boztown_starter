@@ -1,6 +1,7 @@
-class StandardFormBuilder < ActionView::Helpers::FormBuilder
+# frozen_string_literal: true
 
-  def text_field(method, options={})
+class StandardFormBuilder < ActionView::Helpers::FormBuilder
+  def text_field(method, options = {})
     label_text      = options.fetch(:label, method.to_s.humanize)
     label_options   = options.fetch(:label_options, {})
     input_defaults  = { class: "form-control" }
@@ -15,9 +16,8 @@ class StandardFormBuilder < ActionView::Helpers::FormBuilder
   private
 
   def merge_options(defaults, new_options)
-    (defaults.keys + new_options.keys).inject({}) {|h,key|
+    (defaults.keys + new_options.keys).each_with_object({}) do |key, h|
       h[key] = [defaults[key], new_options[key]].compact.join(" ")
-      h
-    }
+    end
   end
 end
