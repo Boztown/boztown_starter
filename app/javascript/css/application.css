@@ -42,8 +42,7 @@ h6 {
   @apply text-lg my-2
 }
 
-
-.field {
+.form-group {
   @apply my-4
 }
 
