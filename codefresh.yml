@@ -34,6 +34,7 @@ steps:
     image: '${{build}}'
     working_directory: "${{clone}}" # Running command where code cloned
     commands:
+      - "bundle exec rails db:migrate"
       - "bundle exec rspec"
     stage: "test"
     services:
