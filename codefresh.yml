@@ -40,8 +40,6 @@ steps:
       composition:
         my_postgresql_db:
           image: postgres:latest
-          commands:
-            - "pg_isready -h my_postgresql_db" 
           ports:
             - 5432 
           environment:
@@ -52,4 +50,5 @@ steps:
         timeoutSeconds: 30
         periodSeconds: 15
         image: 'postgres:latest'
-
+        commands:
+          - "pg_isready -h my_postgresql_db" 
