@@ -36,4 +36,16 @@ steps:
     commands:
       - "bundle exec rspec"
     stage: "test"
+    services:
+      composition:
+        my_postgresql_db:
+          image: postgres:latest
+          ports:
+            - 5432 
+      readiness:
+        timeoutSeconds: 30
+        periodSeconds: 15
+        image: 'postgres:latest'
+        commands:
+          - "pg_isready -h my_postgresql_db" 
 
