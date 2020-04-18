@@ -46,7 +46,7 @@ steps:
         timeoutSeconds: 30
         periodSeconds: 15
         image: 'postgres:latest'
-        commands:
-          - "cf_export POSTGRES_DB=db POSTGRES_HOST_AUTH_METHOD=trust"
-          - "pg_isready -h my_postgresql_db" 
+      environment:
+        - POSTGRES_DB=db
+        - POSTGRES_HOST_AUTH_METHOD=trust
 
