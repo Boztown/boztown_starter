@@ -43,6 +43,7 @@ steps:
           ports:
             - 5432 
           environment:
+            - POSTGRES_PASSWORD=somepassword
             - POSTGRES_DB=db
             - POSTGRES_HOST_AUTH_METHOD=trust
       readiness:
