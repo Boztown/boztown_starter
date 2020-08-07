@@ -1,0 +1,2 @@
+FROM postgres:latest
+RUN pg_isready -h my_postgresql_db
